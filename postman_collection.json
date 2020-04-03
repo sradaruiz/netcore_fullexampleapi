@@ -1,0 +1,537 @@
+{
+	"info": {
+		"name": "ExampleFullApiRest",
+		"_postman_id": "ba25676c-952e-6602-04f8-d8ae9c4bbc3c",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Listado clientes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						""
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Listado clientes FILTRO VIP",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes?vip=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "vip",
+							"value": "true",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Listado clientes QUERY",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes?searchQuery=Car",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "searchQuery",
+							"value": "Car",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Listado clientes Paginacion",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes?pageNumber=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes"
+					],
+					"query": [
+						{
+							"key": "pageNumber",
+							"value": "1",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Crear cliente",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"apellido\": \"string\",\r\n  \"telefono\": \"stringstring\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						""
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Crear cliente ya existe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Carlos\",\r\n  \"apellido\": \"Tirado\",\r\n  \"telefono\": \"2323134\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"dsfsdf\",\r\n  \"apellido\": \"string\",\r\n  \"telefono\": \"stringstring\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar cliente parcial",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    { \"op\": \"replace\", \"path\": \"/nombre\", \"value\": \"Jose\" }\r\n]"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Clientes Destacados",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/destacados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"destacados"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Presupuestos cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/25320c5e-f58a-4b1f-b63a-8ee07a840bdf/presupuestos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"25320c5e-f58a-4b1f-b63a-8ee07a840bdf",
+						"presupuestos"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "[XML] Destacados",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/destacados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"destacados"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4000/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						""
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "[HAL] Root",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4000/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						""
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "[HAL] Get Cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/hal+json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "[GZIP] Get Cliente",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "application/gzip"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"string\",\r\n  \"esVip\": true\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:4000/api/clientes/6f63af95-d62a-4f5d-86e9-3ee12b0085d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"clientes",
+						"6f63af95-d62a-4f5d-86e9-3ee12b0085d2"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}
